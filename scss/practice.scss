@@ -1,0 +1,96 @@
+
+
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+@mixin listyle {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%; height:400px;
+  background-position: center;
+  transition: .8s;
+  &:hover{
+    transform: scale(1.2);
+  }    
+}
+// 모든 요소의 각자가 들어가는 속성이 기본 디폴트값으로 들어가는것을 방지하기 위함
+// 텍스트데코레이션은 a태그를 사용했을때 색 들어가는것을 없애줌
+// 각 태그에 디폴트를 없애주는것임
+// ul li 에서 점으로 되는 것을 방지
+
+main{
+  .title{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    padding-top: 150px;
+    color: tomato;
+    a{
+      position: relative;
+      cursor: pointer;
+      &:hover:after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto;
+        width: 0px;
+        height: 2px;
+        background-color: tomato;
+        animation: titleAnim .3s forwards;
+      }
+    }
+    @keyframes titleAnim{
+      100%{width:70px}
+    }
+  }
+  ul{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    margin: 100px auto;
+    li{
+      width: 100%;
+      height: 400px;
+      background-color: aquamarine;
+      overflow: hidden;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;    
+    }
+    li:nth-of-type(1) div{
+      background-image: url(../img/baby-g85dfbca9a_640.jpg);
+      @include listyle();
+      background-position: -111px center;
+    }
+    li:nth-of-type(3) div{
+      background-image: url(../img/girl-g60eff263a_640.jpg);
+      @include listyle();
+    }
+    li:nth-of-type(2){
+      margin: 0 30px;
+    }
+    li:nth-of-type(2) div{
+      background-image: url(../img/girl-g9632e454f_640.jpg); 
+      @include listyle();
+    }
+  }
+}
+
+@media screen and (max-width:420px){
+  main{
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: unset;
+      width: 90%;
+      margin: 0 auto;
+      li{
+        width: 100%;
+        margin: 50px 0px;
+      }
+    }
+  }
+}
