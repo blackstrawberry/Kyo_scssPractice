@@ -75,7 +75,7 @@ main ul li:nth-of-type(1) div {
   background-position: center;
   -webkit-transition: .8s;
   transition: .8s;
-  background-position: -111px center;
+  background-position: center;
 }
 
 main ul li:nth-of-type(1) div:hover {

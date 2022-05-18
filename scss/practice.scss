@@ -63,7 +63,7 @@ main{
     li:nth-of-type(1) div{
       background-image: url(../img/baby-g85dfbca9a_640.jpg);
       @include listyle();
-      background-position: -111px center;
+      background-position: center;
     }
     li:nth-of-type(3) div{
       background-image: url(../img/girl-g60eff263a_640.jpg);
@@ -78,7 +78,6 @@ main{
     }
   }
 }
-
 @media screen and (max-width:420px){
   main{
     ul {
